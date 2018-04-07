@@ -11,5 +11,4 @@ google-cloud-storage = "*"
 
 
 [dev-packages]
-
 bumpversion = "*"
