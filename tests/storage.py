@@ -1,5 +1,5 @@
 from google.cloud.storage import Blob, Bucket
-from google.api_core.page_iterator import HTTPIterator, Iterator
+from google.api_core.page_iterator import HTTPIterator
 
 from gutils.gcp.storage import CloudStorage
 from tests import bucket_name

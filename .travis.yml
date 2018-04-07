@@ -7,10 +7,7 @@ before_install:
     -in tests/resources/gutils-test.json.enc -out tests/resources/gutils-test.json -d
 
 install:
-  - pip install pipenv
-  - pipenv lock --requirements > requirements.txt
-  - pipenv lock --requirements --dev >> requirements.txt
-  - pip install -r requirements.txt
+  - ./travis/install.sh
 
 script:
   - pytest tests/*
@@ -18,7 +15,6 @@ script:
 after_success:
   - source travis/git_utils.sh
   - merge_successful_pull_request
-
 
 env:
   global:
