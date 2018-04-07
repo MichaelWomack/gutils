@@ -34,5 +34,7 @@ function merge_successful_pull_request() {
         git checkout $TRAVIS_BRANCH
         git merge $STAGE_BRANCH
         git push --tags origin $TRAVIS_BRANCH
+    else
+        echo "No pull request."
     fi
 }
