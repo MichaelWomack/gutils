@@ -25,14 +25,15 @@ function merge_successful_pull_request() {
         git merge --ff-only "$TRAVIS_COMMIT"
 
         echo "### Just attempted to merge $TRAVIS_COMMIT"
+
+        git checkout $TRAVIS_BRANCH -f && git merge $STAGE_BRANCH || exit 1
+
         if [[ $TRAVIS_BRANCH == "master" ]]; then
            echo "### Preparing to bumpversion. Current tag: $(git tag)"
            bumpversion minor
            echo "### New Tag: $(git tag)"
         fi
 
-        git checkout $TRAVIS_BRANCH
-        git merge $STAGE_BRANCH
         git push --tags origin $TRAVIS_BRANCH
     else
         echo "No pull request."
