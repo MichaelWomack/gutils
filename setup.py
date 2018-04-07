@@ -7,7 +7,7 @@ setup(
 		url='',
 		license='',
 		author='michaelwomack',
-		author_email='mwomack93@gmail.com',
+		author_email='',
 		description='Utilities for google apis',
 		install_requires = [
 			'google-cloud-storage==1.7.0'
